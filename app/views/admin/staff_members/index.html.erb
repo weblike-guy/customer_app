@@ -1,0 +1,37 @@
+<% @title = 'Staff List' %>
+<h1 class="maintitle"><%= @title %></h1>
+<div class="addlink"><h3><%= link_to 'Add New Member', :new_admin_staff_member %></h3></div>
+
+<div class="table-responsive">
+  <table class="listing-admin-staffmembers table-striped table-bordered">
+    <tr>
+    	<th>NAME</th>
+    	<th>NAME( ENGLISH )</th>
+        <th>NICK NAME</th>
+    	<th>EMAIL</th>
+    	<th>START DAY</th>
+    	<th>END DAY</th>
+    	<th>SUSPENDED</th>
+    	<th>ACTION</th>
+    </tr>
+
+    <% @staff_members.each do |m| %>
+      <% p = StaffMemberPresenter.new(m, self) %>
+       <tr>
+       	  <td><%= m.family_name %> <%= m.given_name %></td>
+       	  <td><%= m.family_name_eng %> <%= m.given_name_eng %></td>
+       	  <td><%= m.staff_user_name %></td>
+       	  <td class="email"><%= m.email %></td>
+       	  <td class="date"><%= m.start_date.strftime('%Y/%m/%d') %></td>
+       	  <td class="date"><%= m.end_date.try(:strftime, '%Y/%m/%d') %></td>
+       	  <td class="boolean"><%= m.suspended? ? raw('&#x2611') : raw('&#x2610') %></td>
+       	  <td class="actions">
+            <%= link_to 'EDIT', [:edit, :admin, m ] %>  |
+            <%= link_to 'Log', [:admin, m, :staff_events ] %> |
+		 <%=link_to 'DELETE', [:admin, m ], 
+            method: :delete, data: { confirm: 'Really delete this member?' } %>
+       	  </td>
+       </tr>
+    <% end %>
+  </table>
+</div>	

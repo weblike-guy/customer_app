@@ -1,0 +1,16 @@
+@import "colors";
+@import "dimensions";
+
+form {
+   div {
+     padding: 8px;
+   }
+   label.required:after{
+     content: '*';
+     color: red;
+   }
+}
+
+.table-color{
+  background-color: #f8f8f8;
+}

@@ -1,0 +1,29 @@
+<%
+  if @staff_member
+    full_name = @staff_member.family_name + @staff_member.given_name
+    @title = "#{ full_name }\'s Loginlog. "
+  else
+    @title = "Staff Loginlog."  
+  end
+%>
+
+<h1 class="maintitle"><%= @title %></h1>
+
+  
+  <div class="table-responsive">
+    <%= paginate @events %>
+  <table class="table-striped table-bordered">
+    <tr class="row">
+       <% unless @staff_member %> <th class="col-md-6">NAME</th><% end %>
+        <th class="col-md-2">TYPE</th>
+        <th class="col-md-4">TIME</th>
+    </tr>
+       <%= render partial: 'event', collection: @events %>
+       <% if @events.empty? %>
+    <tr class="row">
+       <%= content_tag(:td, 'No Record yet!', colspan: @staff_member ? 2 : 3,
+           style: 'text-align: center') %> 
+    </tr>
+       <% end %>
+  </table>
+  </div>

@@ -1,0 +1,10 @@
+<tr class="row">
+  <% unless @staff_member %>
+    <td class="col-md-6"> <%= link_to(event.member.family_name_eng + ' ' + event.member.given_name_eng,
+             [:admin, event.member, :staff_events ]) %>
+    </td>
+  <% end %>
+
+  <td class="col-md-2"><%= event.description %></td>
+  <td class="date col-md-4"><%= event.occurred_at.strftime('%Y/%m/%d %H:%M:%S') %></td>
+</tr>

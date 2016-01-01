@@ -1,0 +1,48 @@
+<div class="notes">
+   * you have to type.
+</div>
+
+<div class="form-group">
+    <div class="col-sm-3"><%= f.label :email, 'E-Mail', class: 'required' %></div>
+     <div class="col-sm-8"><%= f.text_field :email, size: 32, required: true, class: 'form-control', placeholder: 'Email' %></div>
+</div>
+
+<% if f.object.new_record? %>
+<div class="form-group">
+     <div class="col-sm-3"><%= f.label :password, 'Password', class: 'required' %></div>
+     <div class="col-sm-8"><%= f.password_field :password, size: 32, required: true, class: 'form-control', placeholder: 'Password' %></div>
+</div>
+<% end %>
+
+<div class="form-group">
+    <div class="col-sm-3"> <%= f.label :family_name, 'Name', class: 'required' %></div>
+     <div class="col-sm-4"><%= f.text_field :family_name, size: 32, required: true, class: 'form-control', placeholder: 'Family Name' %></div>
+     <div class="col-sm-4"><%= f.text_field :given_name, size: 32, required: true, class: 'form-control', placeholder: 'Given Name' %></div>
+</div>
+
+<div class="form-group">
+   <div class="col-sm-3"> <%= f.label :family_name_eng, 'Name(English)', class: 'required' %></div>
+      <div class="col-sm-4"><%= f.text_field :family_name_eng, size: 32, required: true, class: 'form-control', placeholder: 'Family Name(English)' %></div>
+     <div class="col-sm-4"><%= f.text_field :given_name_eng, size: 32, required: true, class: 'form-control', placeholder: 'Given Name(English)' %></div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-3"><%= f.label :staff_user_name, 'Nick Name', class: 'required' %></div>
+    <div class="col-sm-8"><%= f.text_field :staff_user_name, size: 32, required: true, class: 'form-control', placeholder: 'Nick Name' %></div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-3"><%= f.label :start_date, 'Start Day', class: 'required' %></div>
+    <div class="col-sm-8"><%= f.text_field :start_date, required: true, class: 'form-control', placeholder: 'Start Day' %></div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-3"><%= f.label :end_date, 'End Day' %></div>
+    <div class="col-sm-8"><%= f.text_field :end_date, class: 'form-control', placeholder: 'End Day'%></div>
+</div>
+
+<div class="form-group">
+    <div class="col-sm-3"><%= f.label :suspended, 'Stop Account' %></div>
+    <div class="col-sm-8"><%= f.check_box :suspended %></div>
+</div>
+

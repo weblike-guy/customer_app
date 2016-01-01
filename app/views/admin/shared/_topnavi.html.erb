@@ -1,0 +1,46 @@
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <%= link_to 'Admin Top Page', :admin_root, :class => "navbar-brand" %>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                      <%= content_tag(:span, flash.notice, class: 'notice') if flash.notice %><%= content_tag(:span, flash.alert, class: 'alert') if flash.alert %>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#portfolio">account</a>
+                    </li>
+                    <li class="page-scroll">
+                        <%=
+                           if current_administrator
+                            link_to 'logout', :admin_session, method: :delete
+                           else
+                            link_to 'login', :admin_login
+                           end
+                          %>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>

@@ -1,3 +1,6 @@
+@import 'colors';
+@import 'dimensions';
+
 html,body {
   margin: 0;
   padding: 0;
@@ -8,6 +11,58 @@ div#wrapper{
   box-sizing: border-box;
   min-height: 100%;
   margin: 0 auto;
-  padding-bottom: 20px;
-  background-color: #aaa;
+  padding-bottom: ($wide + $moderate)* 2 + $standard_line_height;
+ 
 }
+
+
+/************  top page ********************/
+div#container{
+  padding-top: 70px;
+}
+
+div.intro-text {
+  margin: auto;
+  background-color: $gray;
+  border: 5px solid black;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  width: 80%;
+}
+
+h3.welcome-messeage{
+   text-align: center;
+   padding: 5px;
+}
+
+/************  top page ********************/
+
+/************  basic design *******************/
+h1.maintitle{
+  margin: 0 auto;
+  padding: 10px 0 0 30px;
+}
+
+div.addlink{
+  width: 30%;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  text-align: center;
+}
+
+
+/************ basic design *********************/
+footer{
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  background-color: $dark_gray;
+  color: $very_light_gray;
+  p {
+   text-align: center;
+   padding: 5px;
+   margin: 0;
+  }
+}
+

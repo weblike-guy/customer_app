@@ -1,0 +1,30 @@
+@import "colors";
+@import "dimensions";
+
+div.table-wrapper{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+   background-color: #f8f8f8;
+ }
+.table-striped>tbody>tr:nth-child(even)>td {
+  background-color: #fff;
+}
+
+table{
+    margin: $moderate auto 0;
+    border: solid $moderate $dark_gray;
+
+    tr{
+      th, td { padding: 4px; }
+      td.email, td.date{ font-family: monospace; }
+      td.boolean { text-align: center; }
+      td.actions { text-align: center; 
+                   color: $dark-gray;
+      }
+    }
+}
+

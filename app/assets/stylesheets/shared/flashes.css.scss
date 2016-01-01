@@ -1,0 +1,13 @@
+
+  span.notice, span.alert {
+    display: inline-block;
+    padding: 15px 15px;
+    margin: 0 5px;
+  }
+
+ span.notice {
+   color: green;
+}
+ span.alert{
+  color: red;
+}

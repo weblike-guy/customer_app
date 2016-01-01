@@ -12,18 +12,36 @@ div#wrapper{
   min-height: 100%;
   margin: 0 auto;
   padding-bottom: ($wide + $moderate)* 2 + $standard_line_height;
-  background-color: $gray;
+}
+/********    top page    *******************/
+div#container{
+  padding-top: 90px;
 }
 
+
 header {
-  padding: 5px;
-  background-color: $dark_cyan;
   color: $very_light_gray;
   span.logo-mark{
     font-weight: bold;
   }
 }
 
+div.intro-text {
+  margin: auto;
+  background-color: $gray;
+  border: 5px solid black;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
+  width: 80%;
+}
+
+h3.welcome-messeage{
+   text-align: center;
+   padding: 5px; 
+}
+
+/************  top page ********************/
 footer{
   bottom: 0;
   position: absolute;

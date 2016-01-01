@@ -1,0 +1,32 @@
+div.notes{
+   color: red;
+}
+
+div.generic-form{
+    padding: 12px;
+    border-radius: 4px;
+    border: solid 4px #E0E6EB;
+    background-color: #eee;
+}
+
+form {
+    div {
+         padding: 8px;
+    }
+    label.required:after{
+      content: '*';
+      color: red;
+    }
+   div.buttons{
+      text-align: center;
+      input[type='submit']{
+        padding: 3px 3px;
+      }
+   }
+   div.field_with_errors{
+     display: inline;
+     padding: 0;
+     label{ color: red;}
+     input{ background-color: #FFCCFF}
+   }
+}
