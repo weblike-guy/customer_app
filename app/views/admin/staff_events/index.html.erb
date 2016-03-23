@@ -18,7 +18,9 @@
         <th class="col-md-2">TYPE</th>
         <th class="col-md-4">TIME</th>
     </tr>
-       <%= render partial: 'event', collection: @events %>
+       <% @events.each do |event| %>
+         <%= StaffEventPresenter.new(event, self).table_row %>
+       <% end %>
        <% if @events.empty? %>
     <tr class="row">
        <%= content_tag(:td, 'No Record yet!', colspan: @staff_member ? 2 : 3,

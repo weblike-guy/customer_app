@@ -33,6 +33,7 @@ gem 'email_validator'
 gem 'bootstrap-sass', '~> 3.3.4'
  gem 'foreigner', '~> 1.6.1'
  gem 'kaminari'
+ gem 'nokogiri'
 # Use unicorn as the app server
 # gem 'unicorn'
 

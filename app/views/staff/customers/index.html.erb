@@ -1,0 +1,35 @@
+<% @title = 'Customer Main Page' %>
+<h1><%= @title %></h1>
+
+<div class="">
+   <div class="">
+      <%= link_to 'New Customer', :new_staff_customer %>
+   </div>
+
+  
+      <table class="">
+         <tr>
+           <td>Name</td>
+           <td>TV</td>
+           <td>COUNTRY</td>
+           <td>EMAIL</td>
+           <td>ACTION</td>
+         </tr>
+         <% @customers.each do |c| %>
+         <tr>
+           <td><%= c.family_name %> <%= c.given_name %></td>
+           <td><%= c.exorgood %></td>
+           <td><%= c.country %></td>
+           <td><%= c.email %></td>
+           <td>
+             <%= link_to 'INFO', [ :staff, c ] %>
+             <%= link_to 'EDIT', [ :edit, :staff, c] %>
+             <%= link_to 'DELETE', [:staff, c ], method: :delete,
+                        data: { confirm: "Really Delete this customer?" } %>
+           </td>
+         </tr>
+         <% end %>
+      </table>
+   
+</div>
+

@@ -1,0 +1,19 @@
+<% @title = "Customer Info" %>
+<h1><%= @title %></h1>
+
+<div class="">
+   <table class="">
+      <tr><th colspan="2">Basic Info</th></tr>
+      <% p = @customer %>
+       <tr><th>Name</th><td><%= p.family_name %> <%= p.given_name%></td></tr>
+       <tr><th>TV</th><td><%= p.exorgood %></td></tr>
+       <tr><th>Email</th><td><%= p.email %></td></tr>
+      <% if @customer.thai_area %>
+         <% a = @customer.thai_area %>
+       <tr><th>Thai Area</th><td><%= a.address2%> <%= a.address1 %> <%= a.city %> <%= a.prefectrue %> </td></tr>
+      <% else %>
+         <% a = @customer.maly_area %>
+        <tr><th>Malaysia Area</th><td><%= a.address2%> <%= a.address1 %> <%= a.city %> <%= a.prefectrue %> </td></tr>
+      <% end %>
+   </table>
+</div>

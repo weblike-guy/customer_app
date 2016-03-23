@@ -1,0 +1,17 @@
+<% @title = 'NEW CUSTOMER CREAT..'%>
+
+<h1><%= @title %></h1>
+<div id="">
+  <%= form_for @customer, url: :staff_customer do |f| %>
+      <div>
+    <%= f.label :family_name, "Family Name", class: 'required' %>
+    <%= f.text_field :family_name, size: 32, required: true %>
+ </div>
+
+
+      <div class="buttons">
+        <%= f.submit 'SUBMIT' %>
+        <%= link_to 'CANCEL', :staff_customers %>
+      </div>
+  <% end %>
+</div>
